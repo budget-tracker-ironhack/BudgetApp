@@ -1,0 +1,41 @@
+{
+    "ingresos": [
+      {
+        "id": "e6d9fd5f-dc90-4290-bd43-8e2d6ff9ec2a",
+        "descripcion": "Sueldo",
+        "cantidad": 1500,
+        "categoria": "Trabajo",
+        "fecha": "2024-12-01"
+      },
+      {
+        "id": "e6d9fd5f-dc90-4290-bd43-8e2d6ff9ec2b",
+        "descripcion": "Freelance",
+        "cantidad": 500,
+        "categoria": "Trabajo",
+        "fecha": "2024-12-10"
+      }
+    ],
+    "gastos": [
+      {
+        "id": "e6d9fd5f-dc90-4290-bd43-8e2d6ff9ec2c",
+        "descripcion": "Alquiler",
+        "cantidad": 600,
+        "categoria": "Vivienda",
+        "fecha": "2024-12-01"
+      },
+      {
+        "id": "e6d9fd5f-dc90-4290-bd43-8e2d6ff9ec2d",
+        "descripcion": "Comida",
+        "cantidad": 150,
+        "categoria": "Alimentación",
+        "fecha": "2024-12-05"
+      },
+      {
+        "id": "e6d9fd5f-dc90-4290-bd43-8e2d6ff9ec2e",
+        "descripcion": "Transporte",
+        "cantidad": 50,
+        "categoria": "Transporte",
+        "fecha": "2024-12-08"
+      }
+    ]
+  }
