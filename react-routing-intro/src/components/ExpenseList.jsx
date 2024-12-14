@@ -5,7 +5,7 @@ function ExpenseList({ expenses, handleRemoveExpense }) {
     <ul className="list-group">
       {expenses.map((expense) => (
         <ExpenseItem
-          key={'expenseItem-' + expense.id}
+          key={`expenseItem-${expense.id}`}
           expense={expense}
           handleRemoveExpense={handleRemoveExpense}
         />
