@@ -1,4 +1,4 @@
-import {Budgetmain} from '../components/budget-main';
+import Budgetmain from '../components/budget-main';
 import { PageLayout } from '../components/layouts/page-layout';
 
 function HomePage() {
