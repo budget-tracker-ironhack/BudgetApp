@@ -1,6 +1,6 @@
-import Navbar from './components/UI/navbar';
+import Navbar from './components/ui/navbar';
 import { Route, Routes } from 'react-router-dom';
-import HomePage from './pages/homepage';
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
