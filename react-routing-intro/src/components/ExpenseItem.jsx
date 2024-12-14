@@ -1,8 +1,9 @@
 const ExpenseItem = ({ expense, handleRemoveExpense }) => {
+  const amount = expense.amount ?? 0;
   return (
     <li className="list-group-item d-flex justify-content-between align-items-center">
       {expense.name}
-      <span className="">{expense.cost}</span>
+      <span className="">{amount.toFixed(2)}€</span>
       <div>
         <button
           type="button"
