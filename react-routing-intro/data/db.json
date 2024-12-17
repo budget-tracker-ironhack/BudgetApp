@@ -13,6 +13,13 @@
       "amount": 500,
       "category": "Trabajo",
       "date": "2024-12-10"
+    },
+    {
+      "id": "7afa0223-a660-4b14-9bd5-ec8049162d9b",
+      "name": "Sueldo",
+      "amount": 1450,
+      "category": "Trabajo",
+      "date": "2024-11-01T00:00:00.000Z"
     }
   ],
   "expenses": [
@@ -29,6 +36,20 @@
       "amount": 50,
       "category": "Transporte",
       "date": "2024-12-08"
+    },
+    {
+      "id": "5021c763-555d-48d0-aa8e-e7d6168c2fb2",
+      "name": "Compra",
+      "amount": 50,
+      "category": "Alimentacion2",
+      "date": "2024-12-10T00:00:00.000Z"
+    },
+    {
+      "id": "5021c763-555d-48d0-aa8e-e7d6168c2fb2",
+      "name": "Compra",
+      "amount": 50,
+      "category": "Alimentacion2",
+      "date": "2024-12-10T00:00:00.000Z"
     }
   ]
 }
