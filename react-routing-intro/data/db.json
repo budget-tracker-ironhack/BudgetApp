@@ -24,13 +24,6 @@
   ],
   "expenses": [
     {
-      "id": "e6d9fd5f-dc90-4290-bd43-8e2d6ff9ec2d",
-      "name": "Comida",
-      "amount": 150,
-      "category": "Alimentación",
-      "date": "2024-12-05"
-    },
-    {
       "id": "e6d9fd5f-dc90-4290-bd43-8e2d6ff9ec2e",
       "name": "Transporte",
       "amount": 50,
