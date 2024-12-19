@@ -6,98 +6,70 @@ import axios from 'axios';
 import AddExpense from '../components/AddExpense';
 
 function HomePage() {
-  const [income, setIncome] = useState(0);
-  const [expenses, setExpenses] = useState(0);
-  const [expenseList, setExpenseList] = useState([]);
-  const [incomeList, setIncomeList] = useState([]);
+  const [totalIncome, setTotalIncome] = useState(0);
+  const [totalExpense, setTotalExpense] = useState(0);
+  const [transactions, setTransactions] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const { data: expenseData } = await axios.get(
-          'http://localhost:3000/expenses'
-        );
-        console.log("Gastos obtenidos:", expenseData);
-
-        const totalExpenses = expenseData.reduce(
-          (total, item) => total + item.amount,
-          0
-        );
-
-        const { data: incomeData } = await axios.get(
-          'http://localhost:3000/income'
-        );
-        console.log("Ingresos obtenidos:", incomeData);
-        const totalIncome = incomeData.reduce(
-          (total, item) => total + item.amount,
-          0
-        );
-
-        setExpenses(totalExpenses);
-        setIncome(totalIncome);
-        setExpenseList(expenseData);
-        setIncomeList(incomeData);
-
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-    fetchData();
+    axios
+      .get('http://localhost:3000/transactions')
+      .then((response) => {
+        setTransactions(response.data);
+      })
+      .catch((error) => console.error('Error fetching data:', error));
   }, []);
 
-  const handleRemoveExpense = async (id) => {
-    try {
-      await axios.delete(`http://localhost:3000/expenses/${id}`);
+  useEffect(() => {
+    setTotalExpense(
+      transactions.reduce(
+        (expense, transaction) =>
+          transaction.type == 'expense'
+            ? expense + transaction.amount
+            : expense,
+        0
+      )
+    );
 
-      setExpenseList((prevExpenses) => {
-        const updatedExpenses = prevExpenses.filter(
-          (expense) => expense.id !== id
+    setTotalIncome(
+      transactions.reduce(
+        (income, transaction) =>
+          transaction.type == 'income' ? income + transaction.amount : income,
+        0
+      )
+    );
+  }, [transactions]);
+
+  const handleRemoveExpense = (id) => {
+    axios
+      .delete(`http://localhost:3000/transactions/${id}`)
+      .then((response) => {
+        setTransactions(
+          transactions.filter(
+            (transaction) => transaction.id !== response.data.id
+          )
         );
-
-        const updatedTotalExpenses = updatedExpenses.reduce(
-          (total, item) => total + item.amount,
-          0
-        );
-        setExpenses(updatedTotalExpenses);
-
-        return updatedExpenses;
-      });
-    } catch (error) {
-      console.error('Error eliminando el gasto:', error);
-    }
+      })
+      .catch((error) => console.error('Error eliminando el gasto:', error));
   };
 
-  const handleAddExpense = async (newExpense) => {
-    console.log("handleAddExpense llamado", newExpense);
-    try {
-      const endpoint = newExpense.category === "Trabajo" ? "income" : "expenses";
-      
-      await axios.post(`http://localhost:3000/${endpoint}`, newExpense);
+  const handleAddExpense = (newExpense) => {
+    newExpense.type = newExpense.category === 'Trabajo' ? 'income' : 'expense';
 
-      const { data: expenseData } = await axios.get("http://localhost:3000/expenses");
-      const { data: incomeData } = await axios.get('http://localhost:3000/income');
-
-      setExpenseList(expenseData);
-      setIncomeList(incomeData);
-  
-      setExpenses(updatedTotalExpenses);
-    } catch (error) {
-      console.error("Error al agregar la transacción:", error);
-    }
+    axios
+      .post(`http://localhost:3000/transactions`, newExpense)
+      .then((response) => setTransactions([...transactions, response.data]))
+      .catch((error) =>
+        console.error('Error al agregar la transacción:', error)
+      );
   };
-  
-  const combinedList = [
-    ...expenseList.map(item => ({ ...item, type: 'expense' })),
-    ...incomeList.map(item => ({ ...item, type: 'income' }))
-    ].sort((a, b) => new Date(b.date) - new Date(a.date));
 
   return (
     <PageLayout>
-      <Budgetmain income={income} expenses={expenses} />
+      <Budgetmain income={totalIncome} expenses={totalExpense} />
       <AddExpense handleAddExpense={handleAddExpense} />
       <h3>Lista de Movimientos</h3>
       <ExpenseList
-        expenses={combinedList}
+        expenses={transactions}
         handleRemoveExpense={handleRemoveExpense}
       />
     </PageLayout>
