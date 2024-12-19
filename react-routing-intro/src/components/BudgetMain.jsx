@@ -1,5 +1,3 @@
-//budget
-
 function Budgetmain({ income = 0, expenses = 0 }) {
   const balance = income - expenses;
   return (
