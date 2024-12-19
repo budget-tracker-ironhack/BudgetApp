@@ -1,4 +1,21 @@
 {
-  "transactions": [],
+  "transactions": [
+    {
+      "id": "6b1b036d-e86c-4d0c-b4f3-8a585bb8310b",
+      "name": "asdf",
+      "amount": 12,
+      "category": "Trabajo",
+      "date": "2024-12-18T00:00:00.000Z",
+      "type": "income"
+    },
+    {
+      "id": "75f1cf04-70e1-428b-a72d-f0e78bd4f639",
+      "name": "asdfg",
+      "amount": 12,
+      "category": "",
+      "date": "2024-12-18T00:00:00.000Z",
+      "type": "expense"
+    }
+  ],
   "budgets": []
 }
