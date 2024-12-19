@@ -1,48 +1,21 @@
-{
-  "income": [
+
+
+  "transactions": [
     {
-      "id": "e6d9fd5f-dc90-4290-bd43-8e2d6ff9ec2a",
-      "name": "Sueldo",
-      "amount": 1500,
+      "id": "6b1b036d-e86c-4d0c-b4f3-8a585bb8310b",
+      "name": "asdf",
+      "amount": 12,
       "category": "Trabajo",
-      "date": "2024-12-01"
+      "date": "2024-12-18T00:00:00.000Z",
+      "type": "income"
     },
     {
-      "id": "e6d9fd5f-dc90-4290-bd43-8e2d6ff9ec2b",
-      "name": "Freelance",
-      "amount": 500,
-      "category": "Trabajo",
-      "date": "2024-12-10"
-    },
-    {
-      "id": "7afa0223-a660-4b14-9bd5-ec8049162d9b",
-      "name": "Sueldo",
-      "amount": 1450,
-      "category": "Trabajo",
-      "date": "2024-11-01T00:00:00.000Z"
+      "id": "75f1cf04-70e1-428b-a72d-f0e78bd4f639",
+      "name": "asdfg",
+      "amount": 12,
+      "category": "",
+      "date": "2024-12-18T00:00:00.000Z",
+      "type": "expense"
     }
   ],
-  "expenses": [
-    {
-      "id": "e6d9fd5f-dc90-4290-bd43-8e2d6ff9ec2e",
-      "name": "Transporte",
-      "amount": 50,
-      "category": "Transporte",
-      "date": "2024-12-08"
-    },
-    {
-      "id": "5021c763-555d-48d0-aa8e-e7d6168c2fb2",
-      "name": "Compra",
-      "amount": 50,
-      "category": "Alimentacion2",
-      "date": "2024-12-10T00:00:00.000Z"
-    },
-    {
-      "id": "5021c763-555d-48d0-aa8e-e7d6168c2fb2",
-      "name": "Compra",
-      "amount": 50,
-      "category": "Alimentacion2",
-      "date": "2024-12-10T00:00:00.000Z"
-    }
-  ]
-}
+  "budgets": []
