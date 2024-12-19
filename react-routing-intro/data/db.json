@@ -1,5 +1,4 @@
-
-
+{
   "transactions": [
     {
       "id": "6b1b036d-e86c-4d0c-b4f3-8a585bb8310b",
@@ -19,3 +18,4 @@
     }
   ],
   "budgets": []
+}
