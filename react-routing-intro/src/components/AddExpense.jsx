@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import axios from 'axios';
 
 function AddExpense({ handleAddExpense }) {
   const [name, setName] = useState('');
@@ -10,31 +9,19 @@ function AddExpense({ handleAddExpense }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("Formulario enviado", { name, amount, category, date });
-   const expenseData = {
-    id: uuidv4(),
-    name,
-    amount: parseFloat(amount),
-    category,
-    date: new Date(date),
-   };
-
-   try {
-    if (category === "Trabajo") {
-      await axios.post("http://localhost:3000/income", expenseData);
-    }else {
-      await axios.post("http://localhost:3000/expenses", expenseData);
-    }
-    setName("");
-    setAmount("");
-    setCategory("");
-    setDate("");
+    const expenseData = {
+      id: uuidv4(),
+      name,
+      amount: parseFloat(amount),
+      category,
+      date: new Date(date),
+    };
 
     handleAddExpense(expenseData);
-   }catch (error) {
-    console.error("Error al guardar el registro", error);
-   }
-  
+    setName('');
+    setAmount('');
+    setCategory('');
+    setDate('');
   };
 
   return (
@@ -72,7 +59,9 @@ function AddExpense({ handleAddExpense }) {
             value={category}
             onChange={(e) => setCategory(e.target.value)}
           >
-            <option value="" disabled>Categorias</option>
+            <option value="" disabled>
+              Categorias
+            </option>
             <option value="Trabajo">Trabajo</option>
             <option value="Alimentacion2">Alimentacion</option>
             <option value="Vivienda">Vivienda</option>

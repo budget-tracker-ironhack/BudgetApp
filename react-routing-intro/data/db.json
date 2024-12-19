@@ -15,6 +15,22 @@
       "category": "",
       "date": "2024-12-18T00:00:00.000Z",
       "type": "expense"
+    },
+    {
+      "id": "b8d1c025-47c4-4c7a-a4c5-a17fc19f8bd8",
+      "name": "casa",
+      "amount": 150,
+      "category": "Trabajo",
+      "date": "2024-11-27T00:00:00.000Z",
+      "type": "income"
+    },
+    {
+      "id": "1105fcde-d777-40e9-bc5a-9f7967d47a80",
+      "name": "coche",
+      "amount": 170,
+      "category": "Trabajo",
+      "date": "2024-12-20T00:00:00.000Z",
+      "type": "income"
     }
   ],
   "budgets": []
