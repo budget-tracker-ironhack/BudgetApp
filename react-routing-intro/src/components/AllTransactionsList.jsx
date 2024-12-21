@@ -1,11 +1,10 @@
 import ExpenseItem from './ExpenseItem';
 
-function LastTransactions({ expenses, handleRemoveExpense }) {
+function TransactionsList({ expenses, handleRemoveExpense }) {
   return (
     <ul className="list-group">
       {expenses
         .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-        .slice(0, 4)
         .map((expense) => (
           <ExpenseItem
             key={`expenseItem-${expense.id}`}
@@ -17,4 +16,4 @@ function LastTransactions({ expenses, handleRemoveExpense }) {
   );
 }
 
-export default LastTransactions;
+export default TransactionsList;

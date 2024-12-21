@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Budgetmain from '../components/budgetmain';
 import ExpenseList from '../components/ExpenseList';
 import PageLayout from '../components/layouts/PageLayout/pagelayout';
@@ -52,21 +53,13 @@ function HomePage() {
       .catch((error) => console.error('Error eliminando el gasto:', error));
   };
 
-  const handleAddExpense = (newExpense) => {
-    newExpense.type = newExpense.category === 'Trabajo' ? 'income' : 'expense';
-    axios
-      .post(`http://localhost:3000/transactions`, newExpense)
-      .then((response) => setTransactions([...transactions, response.data]))
-      .catch((error) =>
-        console.error('Error al agregar la transacción:', error)
-      );
-  };
-
   return (
     <PageLayout>
       <Budgetmain income={totalIncome} expenses={totalExpense} />
-      <AddExpense handleAddExpense={handleAddExpense} />
-      <h3>Lista de Movimientos</h3>
+      <Link to="/transactionsPage">
+        <button>Agregar Movimiento</button>
+      </Link>
+      <h3>Ultimos Movimientos</h3>
       <ExpenseList
         expenses={transactions}
         handleRemoveExpense={handleRemoveExpense}
