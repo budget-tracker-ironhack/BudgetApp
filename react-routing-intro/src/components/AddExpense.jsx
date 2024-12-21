@@ -51,15 +51,17 @@ function AddExpense({ handleAddExpense }) {
           <label htmlFor="amount">Cantidad</label>
           <input
             required="required"
-            type="text"
+            type="number"
             className="form-control"
             id="amount"
             name="amount"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
+            min = "0"
+            step="0.01"
           ></input>
         </div>
-        <div className="col-l m-4">
+        <div className="col-l my-3">
           <select
             className="form-select"
             aria-label="Default select example"
@@ -68,7 +70,7 @@ function AddExpense({ handleAddExpense }) {
             onChange={(e) => setCategory(e.target.value)}
           >
             <option value="" disabled>
-              Categorias
+              Categoría
             </option>
             <option value="Trabajo">Trabajo</option>
             <option value="Alimentacion">Alimentacion</option>
@@ -77,7 +79,7 @@ function AddExpense({ handleAddExpense }) {
             <option value="Otros">Otros</option>
           </select>
         </div>
-        <div className="col-l m-2">
+        <div className="col-l mb-2">
           <label htmlFor="amount">Fecha</label>
           <input
             required="required"
@@ -89,8 +91,8 @@ function AddExpense({ handleAddExpense }) {
           ></input>
         </div>
         <div className="row">
-          <div className="col-1">
-            <button type="submit" className="btn btn-primary mt-3">
+          <div className="col-1 my-4">
+            <button type="submit" className="btn" style={{ backgroundColor: '#e762ee', color: 'white' }}>
               Guardar
             </button>
           </div>
