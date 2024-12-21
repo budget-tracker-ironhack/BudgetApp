@@ -6,6 +6,13 @@ function AddExpense({ handleAddExpense }) {
   const [amount, setAmount] = useState('');
   const [category, setCategory] = useState('');
   const [date, setDate] = useState('');
+  const categoryIcons = {
+    Trabajo: "bi-briefcase-fill",
+    Vivienda: "bi-house-fill",
+    Alimentacion: "bi-basket2-fill",
+    Transporte: "bi-car-front-fill",
+    Otros: "bi-three-dots",
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -15,6 +22,7 @@ function AddExpense({ handleAddExpense }) {
       amount: parseFloat(amount),
       category,
       date: new Date(date),
+      icon: categoryIcons[category],
     };
 
     handleAddExpense(expenseData);
@@ -63,7 +71,7 @@ function AddExpense({ handleAddExpense }) {
               Categorias
             </option>
             <option value="Trabajo">Trabajo</option>
-            <option value="Alimentacion2">Alimentacion</option>
+            <option value="Alimentacion">Alimentacion</option>
             <option value="Vivienda">Vivienda</option>
             <option value="Transporte">Transporte</option>
             <option value="Otros">Otros</option>
