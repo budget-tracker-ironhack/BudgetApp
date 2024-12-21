@@ -1,9 +1,11 @@
+import axios from 'axios';
 import { useEffect, useState } from 'react';
+import AddExpense from '../components/AddExpense';
 import Budgetmain from '../components/budgetmain';
 import ExpenseList from '../components/ExpenseList';
 import PageLayout from '../components/layouts/PageLayout/pagelayout';
-import axios from 'axios';
-import AddExpense from '../components/AddExpense';
+import CategoriesPieChart from '../components/CategoriesPieChart';
+import BalancePieChart from '../components/BalancePieChart';
 
 function HomePage() {
   const [totalIncome, setTotalIncome] = useState(0);
@@ -65,6 +67,10 @@ function HomePage() {
   return (
     <PageLayout>
       <Budgetmain income={totalIncome} expenses={totalExpense} />
+      <div className="container d-flex py-2 justify-content-around items-center">
+        <CategoriesPieChart transactions={transactions} />
+        <BalancePieChart transactions={transactions} />
+      </div>
       <AddExpense handleAddExpense={handleAddExpense} />
       <h3>Lista de Movimientos</h3>
       <ExpenseList

@@ -1,29 +1,4 @@
 {
-  "transactions": [
-    {
-      "id": "643bb0eb-a653-4aa1-8349-e8a843497680",
-      "name": "comida 2024-12-18",
-      "amount": 240,
-      "category": "Alimentacion2",
-      "date": "2024-12-18T00:00:00.000Z",
-      "type": "expense"
-    },
-    {
-      "id": "b7d43dc4-c3ad-4e00-ba3a-cb7b7d221fe1",
-      "name": "casa 2024-12-13",
-      "amount": 387,
-      "category": "Alimentacion2",
-      "date": "2024-12-13T00:00:00.000Z",
-      "type": "expense"
-    },
-    {
-      "id": "ad14fdff-b492-44e2-b6ad-298f9110c7ba",
-      "name": "casa 2024-12-04",
-      "amount": 4,
-      "category": "Alimentacion2",
-      "date": "2024-12-04T00:00:00.000Z",
-      "type": "expense"
-    }
-  ],
+  "transactions": [],
   "budgets": []
 }
