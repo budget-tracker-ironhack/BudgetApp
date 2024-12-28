@@ -1,0 +1,15 @@
+.custom-zave {
+  font-size: 2.5rem; /* Cambia el tamaño del texto */
+  color: #cc2375ff; /* Cambia el color del texto (ej. azul Bootstrap) */
+  font-weight: bold; /* Opción: hacerlo negrita */
+}
+
+custom-btn {
+  background-color: #ff5733; /* Color personalizado de fondo */
+  color: white; /* Color del texto */
+  border: none; /* Elimina el borde */
+}
+
+.custom-btn:hover {
+  background-color: #c13c20; /* Color cuando el mouse pasa sobre el botón */
+}
