@@ -1,16 +1,20 @@
+import { Link } from 'react-router-dom';
+import './navbar.css';
+
 function Navbar() {
   return (
-    <nav className="navbar navbar-dark bg-primary">
-      <a className="navbar-brand" href="#">
+    <nav className="navbar" id="topbar">
+      <Link to="./homePage" className="navbar-brand d-flex">
         <img
-          src="/docs/4.0/assets/brand/bootstrap-solid.svg"
-          width="30"
-          height="30"
-          className="d-inline-block align-top"
+          src="./src/assets/LogoZave1.png"
+          width="70"
+          height="60"
+          className="d-inline-block align-top "
           alt=""
+          id="logo"
         />
-        Bootstrap
-      </a>
+        <div className="nombre">Zave</div>
+      </Link>
     </nav>
   );
 }

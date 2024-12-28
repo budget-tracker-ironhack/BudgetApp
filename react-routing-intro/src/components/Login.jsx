@@ -1,25 +1,44 @@
 import { Link } from 'react-router-dom';
-import pmbimg from '../assets/piggy-money-bank-5085515_1280.png';
+import pageimg from '../assets/imagenlogopage.jpg';
+import './login.css';
+
 function Login() {
   return (
     <div className="container d-flex justify-content-center align-items-center vh-100">
       <div
-        className="row shadow-sm"
-        style={{ maxWidth: '800px', width: '100%' }}
+        className="col-md-6 d-none d-md-block p-0"
+        style={{
+          flex: '0 0 60%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
       >
-        <div className="col-md-6 d-none d-md-block p-0">
-          <img
-            src={pmbimg}
-            alt="Login illustration"
-            className="img-fluid h-100"
-            style={{ objectFit: 'cover' }}
-          />
-        </div>
-
-        <div className="col-md-6 p-4 d-flex flex-column justify-content-center">
-          <h3 className="text-center mb-3">
-            Plan, Save, and Achieve Your Goals
-          </h3>
+        <img
+          src={pageimg}
+          alt="Login illustration"
+          className="img-fluid"
+          style={{
+            objectFit: 'contain',
+            maxWidth: '90%',
+            maxHeight: '80%',
+          }}
+        />
+      </div>
+      <div
+        className="row d-flex"
+        style={{
+          flex: '1',
+          maxWidth: 'auto',
+          width: 'auto',
+          padding: '2rem',
+        }}
+      >
+        <div className="col-md-8 p-4justify-content-center">
+          <h2 className="text-center fs-2">
+            Plan, <span className="custom-zave">Zave</span>, and Achieve Your
+            Goals
+          </h2>
           <form method="post">
             <div className="mb-3">
               <input
@@ -38,9 +57,17 @@ function Login() {
                 required
               />
             </div>
-            <Link to="/homePage" className="btn btn-primary w-100">
+            <Link
+              to="/homePage"
+              className="btn custom-btn w-70"
+              style={{
+                backgroundColor: '#ffaf03ff', // Color de fondo personalizado
+                color: 'white', // Color del texto
+                border: 'none', // Eliminar borde
+              }}
+            >
               <span> Create Account</span>
-              <i className="bi bi-person-fill"></i>
+              <i className="bi bi-person-fill mx-1"></i>
             </Link>
           </form>
         </div>
