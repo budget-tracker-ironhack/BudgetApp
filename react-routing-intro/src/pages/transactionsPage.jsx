@@ -88,55 +88,60 @@ function TransactionsPage () {
 
     return (
         <PageLayout>
-          <AddExpense handleAddExpense={handleAddExpense} />
-          <h3>Todos los movimientos</h3>
-          <div className="mb-3">
-            <label htmlFor="month" className="form-label">Selecciona un mes</label>
-            <select
-                id="month"
-                className="form-select"
-                value={selectedMonth}
-                onChange={handleMonthChange}
-                >
-                <option value="">Todos</option>
-                <option value="1">Enero</option>
-                <option value="2">Febrero</option>
-                <option value="3">Marzo</option>
-                <option value="4">Abril</option>
-                <option value="5">Mayo</option>
-                <option value="6">Junio</option>
-                <option value="7">Julio</option>
-                <option value="8">Agosto</option>
-                <option value="9">Septiembre</option>
-                <option value="10">Octubre</option>
-                <option value="11">Noviembre</option>
-                <option value="12">Diciembre</option>
-                    
-            </select>
-          </div>
+            <div className="row g-5">
+                <div className="col-md-4 mb-3">
+                    <AddExpense handleAddExpense={handleAddExpense} />
+                    <div className="card my-3" style={{ maxWidth: '250px' }}>
+                        <div className="card-body">
+                            <h5 className="card-title">Balance Total</h5>
+                            <p className="card-text">
+                                {balance >= 0
+                                    ? <span className="text-success">+{balance.toFixed(2)}€</span>
+                                    : <span className="text-danger">{balance.toFixed(2)}€</span>}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-md-8">
+                    <h3>Todos los movimientos</h3>
+                    <div className="my-3 d-flex align-items-center">
+                        <label htmlFor="month" className="form-label mb-0 me-5">Selecciona un mes</label>
+                        <select
+                            id="month"
+                            className="form-select-sm"
+                            value={selectedMonth}
+                            onChange={handleMonthChange}
+                        >
+                            <option value="">Todos</option>
+                            <option value="1">Enero</option>
+                            <option value="2">Febrero</option>
+                            <option value="3">Marzo</option>
+                            <option value="4">Abril</option>
+                            <option value="5">Mayo</option>
+                            <option value="6">Junio</option>
+                            <option value="7">Julio</option>
+                            <option value="8">Agosto</option>
+                            <option value="9">Septiembre</option>
+                            <option value="10">Octubre</option>
+                            <option value="11">Noviembre</option>
+                            <option value="12">Diciembre</option>
 
-         <div className="card my-3" style={{ maxWidth: '250px' }}>
-            <div className="card-body">
-                <h5 className="card-title">Balance Total</h5>
-                <p className="card-text">
-                    {balance >= 0
-                    ? <span className="text-success">+{balance.toFixed(2)}€</span>
-                    : <span className="text-danger">{balance.toFixed(2)}€</span>}
-                </p>
+                        </select>
+                    </div>
+                    <AllTransactionsList
+                        expenses={filteredExpenses}
+                        handleRemoveExpense={handleRemoveExpense}
+                    />
+                    <Toast
+                        message={toastMessage}
+                        show={showToast}
+                        onClose={() => setShowToast(false)}
+                    />
+                </div>
             </div>
-         </div>
-          <AllTransactionsList
-            expenses={filteredExpenses}
-            handleRemoveExpense={handleRemoveExpense}
-          />
-          <Toast 
-            message={toastMessage} 
-            show={showToast} 
-            onClose={() => setShowToast(false)}
-           />
         </PageLayout>
-      );
-    }
+    );
+}
 
 export default TransactionsPage;
 

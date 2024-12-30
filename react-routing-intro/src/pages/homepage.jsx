@@ -57,14 +57,15 @@ function HomePage() {
   return (
     <PageLayout>
       <Budgetmain income={totalIncome} expenses={totalExpense} />
+      <Link to="/transactionsPage">
+          <button type="submit" className="btn" style={{ backgroundColor: '#e762ee', color: 'white' }}>
+              Agregar Movimiento
+          </button>
+      </Link>
       <div className="container d-flex py-2 justify-content-around items-center">
         <CategoriesPieChart transactions={transactions} />
         <BalancePieChart transactions={transactions} />
       </div>
-      <h3>Lista de Movimientos</h3>
-      <Link to="/transactionsPage">
-        <button>Agregar Movimiento</button>
-      </Link>
       <h3>Ultimos Movimientos</h3>
       <ExpenseList
         expenses={transactions}
