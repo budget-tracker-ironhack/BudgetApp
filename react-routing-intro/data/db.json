@@ -1,14 +1,4 @@
 {
-  "transactions": [
-    {
-      "id": "65f6b621-8118-44a1-a263-eb7a607aee36",
-      "name": "Sueldo",
-      "amount": 1450,
-      "category": "Trabajo",
-      "date": "2024-12-16T00:00:00.000Z",
-      "icon": "bi-briefcase-fill",
-      "type": "income"
-    }
-  ],
+  "transactions": [],
   "budgets": []
 }

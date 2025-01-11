@@ -58,7 +58,7 @@ function HomePage() {
     <PageLayout>
       <Budgetmain income={totalIncome} expenses={totalExpense} />
       <Link to="/transactionsPage">
-          <button type="submit" className="btn" style={{ backgroundColor: '#e762ee', color: 'white' }}>
+          <button type="submit" className="btn" style={{ backgroundColor: '#562f5eff', color: 'white' }}>
               Agregar Movimiento
           </button>
       </Link>
@@ -66,11 +66,28 @@ function HomePage() {
         <CategoriesPieChart transactions={transactions} />
         <BalancePieChart transactions={transactions} />
       </div>
+      <div className="container position relative mt-4">
       <h3>Ultimos Movimientos</h3>
       <ExpenseList
         expenses={transactions}
         handleRemoveExpense={handleRemoveExpense}
       />
+        <Link
+          to="/transactionsPage" 
+          className="btn"
+          style={{
+            backgroundColor: '#ffa500',
+            color: 'white',
+            borderColor: '#ffa500',
+            position: 'absolute',
+            right: '120px',
+            borderRadius: '5px',
+            marginTop: '20px',
+          }}
+        >
+          Ver todo
+        </Link>
+      </div>
     </PageLayout>
   );
 }
