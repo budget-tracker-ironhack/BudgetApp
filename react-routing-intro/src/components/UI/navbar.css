@@ -1,15 +1,14 @@
 #topbar {
   background-color: #562f5eff;
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 600;
   height: min-content;
 }
 .nombre {
   color: white;
+  font-weight: bold;  
   margin-top: 15px;
   display: flex;
   justify-content: space-between;
-  font-size: 24px;
+  font-size: 36px;
 }
 #logo {
   margin-left: 20px;

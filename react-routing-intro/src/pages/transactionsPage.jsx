@@ -5,6 +5,7 @@ import axios from 'axios';
 import AddExpense from '../components/AddExpense';
 import AllTransactionsList from '../components/AllTransactionsList';
 import Toast from '../components/Toast';
+import moneybagicon from '../assets/money-bag-icon.png';
 
 function TransactionsPage () {
 
@@ -91,19 +92,37 @@ function TransactionsPage () {
             <div className="row g-5">
                 <div className="col-md-4 mb-3">
                     <AddExpense handleAddExpense={handleAddExpense} />
-                    <div className="card my-3" style={{ maxWidth: '250px' }}>
-                        <div className="card-body">
-                            <h5 className="card-title">Balance Total</h5>
-                            <p className="card-text">
-                                {balance >= 0
-                                    ? <span className="text-success">+{balance.toFixed(2)}€</span>
-                                    : <span className="text-danger">{balance.toFixed(2)}€</span>}
-                            </p>
-                        </div>
+                    <div 
+                      className="card my-4" 
+                      style={{ 
+                        maxWidth: '300px' , 
+                        backgroundColor: 'rgb(208, 196, 210)', 
+                        border: '1px solidrgb(215, 102, 237)', 
+                        borderRadius: '8px'
+                      }}>
+                    <div className="d-flex align-items-center p-3">
+                      <img 
+                          src={moneybagicon}
+                          alt="Money Bag Icon"
+                          className="me-3"
+                          style={{ width: '60px', height: '60px',borderRadius: '8px' }} 
+                        />  
+                      <h5 className="card-title mb-1">Balance</h5>
+                      <p className="card-text mb-0 ms-3 fs-5" style={{ fontWeight: 'bold' }}>
+                          {balance >= 0
+                              ? <span className="text-success">+{balance.toFixed(2)}€</span>
+                              : <span className="text-danger">{balance.toFixed(2)}€</span>}
+                      </p>
+                      </div>
                     </div>
                 </div>
                 <div className="col-md-8">
+                  <div
+                    className="p-4 rounded"
+                    style={{ backgroundColor: "rgb(208, 196, 210)", border: "1px solid #562f5eff", borderRadius: "8px" }}
+                  >
                     <h3>Todos los movimientos</h3>
+                  
                     <div className="my-3 d-flex align-items-center">
                         <label htmlFor="month" className="form-label mb-0 me-5">Selecciona un mes</label>
                         <select
@@ -127,11 +146,17 @@ function TransactionsPage () {
                             <option value="12">Diciembre</option>
 
                         </select>
+                        </div>
                     </div>
+                    <div
+                        className="p-4 mt-3 rounded"
+                        style={{ backgroundColor: "transparent" }}
+                      >
                     <AllTransactionsList
                         expenses={filteredExpenses}
                         handleRemoveExpense={handleRemoveExpense}
                     />
+                    </div>
                     <Toast
                         message={toastMessage}
                         show={showToast}
