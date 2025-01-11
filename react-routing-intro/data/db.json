@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "transactions": [
     {
       "id": "53b4a455-2466-4f71-9552-72f649d6d301",
@@ -46,5 +47,8 @@
       "type": "expense"
     }
   ],
+=======
+  "transactions": [],
+>>>>>>> 0b7bd25ed02421df41249e6cbfe7084c608b064c
   "budgets": []
 }

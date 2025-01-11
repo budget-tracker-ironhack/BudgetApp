@@ -92,7 +92,7 @@ function AddExpense({ handleAddExpense }) {
         </div>
         <div className="row">
           <div className="col-1 my-4">
-            <button type="submit" className="btn" style={{ backgroundColor: '#e762ee', color: 'white' }}>
+            <button type="submit" className="btn" style={{ backgroundColor: '#562f5eff', color: 'white' }}>
               Guardar
             </button>
           </div>

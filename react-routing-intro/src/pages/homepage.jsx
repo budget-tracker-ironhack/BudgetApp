@@ -67,14 +67,33 @@ function HomePage() {
             Agregar Movimiento
           </button>
         </Link>
+
         <div className="container d-flex py-2 justify-content-around items-center">
           <CategoriesPieChart transactions={transactions} />
           <BalancePieChart transactions={transactions} />
         </div>
-        <ExpenseList
-          expenses={transactions}
-          handleRemoveExpense={handleRemoveExpense}
-        />
+        <div className="container position relative mt-4">
+          <h3>Ultimos Movimientos</h3>
+          <ExpenseList
+            expenses={transactions}
+            handleRemoveExpense={handleRemoveExpense}
+          />
+          <Link
+            to="/transactionsPage"
+            className="btn"
+            style={{
+              backgroundColor: '#ffa500',
+              color: 'white',
+              borderColor: '#ffa500',
+              position: 'absolute',
+              right: '120px',
+              borderRadius: '5px',
+              marginTop: '20px',
+            }}
+          >
+            Ver todo
+          </Link>
+        </div>
       </PageLayout>
     </>
   );
