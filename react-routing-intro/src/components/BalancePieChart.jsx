@@ -4,7 +4,7 @@ import { Cell, Legend, Pie, PieChart, Tooltip } from 'recharts';
 function BalancePieChart({ transactions }) {
   const [pie, setPie] = useState([]);
 
-  const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+  const COLORS = ['#4caf50', '#e53935'];
   const RADIAN = Math.PI / 180;
   const renderCustomizedLabel = ({
     cx,
@@ -56,7 +56,7 @@ function BalancePieChart({ transactions }) {
   }, [transactions]);
 
   return (
-    <PieChart width={450} height={300}>
+    <PieChart width={450} height={450}>
       <Pie
         data={pie}
         cx="50%"

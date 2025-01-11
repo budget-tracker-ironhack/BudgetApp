@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Budgetmain from '../components/budgetmain';
+import Budgetmain from '../components/BudgetMain';
 import ExpenseList from '../components/ExpenseList';
 import PageLayout from '../components/layouts/PageLayout/pagelayout';
 import CategoriesPieChart from '../components/CategoriesPieChart';
@@ -55,23 +55,28 @@ function HomePage() {
   };
 
   return (
-    <PageLayout>
-      <Budgetmain income={totalIncome} expenses={totalExpense} />
-      <Link to="/transactionsPage">
-          <button type="submit" className="btn" style={{ backgroundColor: '#e762ee', color: 'white' }}>
-              Agregar Movimiento
+    <>
+      <PageLayout>
+        <Budgetmain income={totalIncome} expenses={totalExpense} />
+        <Link to="/transactionsPage">
+          <button
+            type="submit"
+            className="btn"
+            style={{ backgroundColor: '#562f5eff', color: 'white' }}
+          >
+            Agregar Movimiento
           </button>
-      </Link>
-      <div className="container d-flex py-2 justify-content-around items-center">
-        <CategoriesPieChart transactions={transactions} />
-        <BalancePieChart transactions={transactions} />
-      </div>
-      <h3>Ultimos Movimientos</h3>
-      <ExpenseList
-        expenses={transactions}
-        handleRemoveExpense={handleRemoveExpense}
-      />
-    </PageLayout>
+        </Link>
+        <div className="container d-flex py-2 justify-content-around items-center">
+          <CategoriesPieChart transactions={transactions} />
+          <BalancePieChart transactions={transactions} />
+        </div>
+        <ExpenseList
+          expenses={transactions}
+          handleRemoveExpense={handleRemoveExpense}
+        />
+      </PageLayout>
+    </>
   );
 }
 

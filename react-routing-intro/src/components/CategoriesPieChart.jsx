@@ -4,7 +4,7 @@ import { Cell, Legend, Pie, PieChart, Tooltip } from 'recharts';
 function CategoriesPieChart({ transactions }) {
   const [pie, setPie] = useState([]);
 
-  const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+  const COLORS = ['#fd7e14', '#dc3545', '#007bff', '#ffc107', '#03bb85'];
   const RADIAN = Math.PI / 180;
   const renderCustomizedLabel = ({
     cx,
@@ -59,7 +59,7 @@ function CategoriesPieChart({ transactions }) {
   }, [transactions]);
 
   return (
-    <PieChart width={450} height={300}>
+    <PieChart width={450} height={450}>
       <Pie
         data={pie}
         cx="50%"
