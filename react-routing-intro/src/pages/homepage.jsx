@@ -62,7 +62,11 @@ function HomePage() {
           <button
             type="submit"
             className="btn"
-            style={{ backgroundColor: '#562f5eff', color: 'white' }}
+            style={{
+              backgroundColor: '#562f5eff',
+              color: 'white',
+              marginLeft: '125px',
+            }}
           >
             Agregar Movimiento
           </button>
@@ -73,7 +77,6 @@ function HomePage() {
           <BalancePieChart transactions={transactions} />
         </div>
         <div className="container position relative mt-4">
-          <h3>Ultimos Movimientos</h3>
           <ExpenseList
             expenses={transactions}
             handleRemoveExpense={handleRemoveExpense}
@@ -88,7 +91,7 @@ function HomePage() {
               position: 'absolute',
               right: '120px',
               borderRadius: '5px',
-              marginTop: '20px',
+              margin: '20px',
             }}
           >
             Ver todo

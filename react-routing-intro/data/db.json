@@ -1,54 +1,50 @@
 {
-<<<<<<< HEAD
   "transactions": [
     {
-      "id": "53b4a455-2466-4f71-9552-72f649d6d301",
-      "name": "supermercado",
-      "amount": 150,
+      "id": "51fae559-32e6-4611-a870-726a1fac2743",
+      "name": "comida",
+      "amount": 200,
       "category": "Alimentacion",
-      "date": "2025-01-08T00:00:00.000Z",
+      "date": "2025-01-04T00:00:00.000Z",
       "icon": "bi-basket2-fill",
       "type": "expense"
     },
     {
-      "id": "e009a434-a920-40d9-a0af-ac729999845f",
-      "name": "Nomina",
+      "id": "3170330a-de32-45f1-8d85-43524f2c16dc",
+      "name": "sueldo",
       "amount": 1500,
       "category": "Trabajo",
-      "date": "2025-01-01T00:00:00.000Z",
+      "date": "2025-01-02T00:00:00.000Z",
       "icon": "bi-briefcase-fill",
       "type": "income"
     },
     {
-      "id": "eb413dda-dbe9-4c81-a5e7-2a286e52a40f",
-      "name": "Alquiler",
-      "amount": 800,
+      "id": "22db820c-563f-4146-b219-0fb7124ca953",
+      "name": "coche",
+      "amount": 200,
+      "category": "Transporte",
+      "date": "2025-01-05T00:00:00.000Z",
+      "icon": "bi-car-front-fill",
+      "type": "expense"
+    },
+    {
+      "id": "22d7219b-9109-4f91-8949-de2a4da83280",
+      "name": "alquiler",
+      "amount": 500,
       "category": "Vivienda",
-      "date": "2025-01-02T00:00:00.000Z",
+      "date": "2025-01-05T00:00:00.000Z",
       "icon": "bi-house-fill",
       "type": "expense"
     },
     {
-      "id": "195a1229-9e66-4bd4-ba54-87ca4d0ea9e2",
-      "name": "Mascota",
-      "amount": 50,
+      "id": "57ed4926-e18b-480d-8f9e-fbd2e2c89deb",
+      "name": "mantenimiento",
+      "amount": 150,
       "category": "Otros",
-      "date": "2025-01-04T00:00:00.000Z",
+      "date": "2025-01-09T00:00:00.000Z",
       "icon": "bi-three-dots",
-      "type": "expense"
-    },
-    {
-      "id": "4398e225-b922-40b6-b5c0-2fcba6bdc4cd",
-      "name": "coche",
-      "amount": 300,
-      "category": "Transporte",
-      "date": "2025-01-02T00:00:00.000Z",
-      "icon": "bi-car-front-fill",
       "type": "expense"
     }
   ],
-=======
-  "transactions": [],
->>>>>>> 0b7bd25ed02421df41249e6cbfe7084c608b064c
   "budgets": []
 }

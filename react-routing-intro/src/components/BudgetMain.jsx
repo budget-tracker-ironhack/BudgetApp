@@ -1,47 +1,96 @@
+import gasto from '../assets/gasto.jpeg';
+import balanceimg from '../assets/balance1.png';
+import ingresos from '../assets/income.png';
+
 function Budgetmain({ income = 0, expenses = 0 }) {
   const balance = income - expenses;
   return (
     <>
       <div className="w-auto">
         <h1 className="text-center">
-          Welcome Back{' '}
-          <span className="fw-bold" style={{ color: ' #cc2375ff' }}>
+          Welcome Back {''}
+          <span
+            className="fw-bold"
+            style={{ color: ' #cc2375ff', fontSize: '48px' }}
+          >
             Zaver
           </span>
         </h1>
 
-        <div className=" d-flex gap-3 m-5 justify-content-around">
+        <div className=" d-flex m-4 justify-content-sm-evenly ">
           <div
-            className="card p-2 g-col-6"
-            style={{ width: '250px', height: '125px', borderRadius: '8px' }}
+            className="card  g-col-6"
+            style={{ width: '280px', height: '100px' }}
           >
-            <div className="card-body">
-              <div className="d-flex align-items-end p-3 gap-2">
-                <strong>Ingresos:</strong>
-                {income.toFixed(2)}€
-              </div>
+            <div className="d-flex align-items-center p-3 gap-2">
+              <img
+                src={ingresos}
+                alt=""
+                className=""
+                style={{ width: '90px', height: '60px' }}
+              />
+              <h6>Ingresos:</h6>
+
+              {income >= 0 ? (
+                <span className="text-success fw-bold ">
+                  +{income.toFixed(2)}€
+                </span>
+              ) : (
+                <span className="text-danger fw-bold">
+                  {income.toFixed(2)}€
+                </span>
+              )}
             </div>
           </div>
 
           <div
-            className="card p-2 g-col-6"
-            style={{ width: '250px', height: '125px', borderRadius: '8px' }}
+            className="card p-1 g-col-6"
+            style={{ width: '275px', height: '100px' }}
           >
-            <div className="card-body">
-              <div className="d-flex align-items-end p-3 gap-2">
-                <strong>Gastos:</strong>
-                {expenses.toFixed(2)}€<br />
-              </div>
+            <div className="d-flex align-items-center p-3 gap-2">
+              <img
+                src={gasto}
+                alt=""
+                className=""
+                style={{ width: '90px', height: '60px', borderRadius: '8px' }}
+              />
+              <h6>Gastos:</h6>
+              {expenses >= 0 ? (
+                <span className="text-danger fw-bold">
+                  +{expenses.toFixed(2)}€
+                </span>
+              ) : (
+                <span className="text-danger fw-bold">
+                  {expenses.toFixed(2)}€
+                </span>
+              )}
+
+              <br />
             </div>
           </div>
 
           <div
-            className="card p-2 g-col-6"
-            style={{ width: '250px', height: '125px', borderRadius: '8px' }}
+            className="card p-1 g-col-6"
+            style={{ width: '275px', height: '100px', borderRadius: '8px' }}
           >
-            <div className=" align-content-end">
-              <strong>Balance:</strong>
-              {balance.toFixed(2)}€<br />
+            <div className="d-flex align-items-center p-3 gap-2 ">
+              <img
+                src={balanceimg}
+                alt=""
+                className=""
+                style={{ width: '90px', height: '60px' }}
+              />
+              <h6>Balance:</h6>
+
+              {balance >= 0 ? (
+                <span className="text-success fw-bold">
+                  +{balance.toFixed(2)}€
+                </span>
+              ) : (
+                <span className="text-danger fw-bold">
+                  {balance.toFixed(2)}€
+                </span>
+              )}
             </div>
           </div>
         </div>

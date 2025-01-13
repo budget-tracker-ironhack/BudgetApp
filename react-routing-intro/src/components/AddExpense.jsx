@@ -7,11 +7,11 @@ function AddExpense({ handleAddExpense }) {
   const [category, setCategory] = useState('');
   const [date, setDate] = useState('');
   const categoryIcons = {
-    Trabajo: "bi-briefcase-fill",
-    Vivienda: "bi-house-fill",
-    Alimentacion: "bi-basket2-fill",
-    Transporte: "bi-car-front-fill",
-    Otros: "bi-three-dots",
+    Trabajo: 'bi-briefcase-fill',
+    Vivienda: 'bi-house-fill',
+    Alimentacion: 'bi-basket2-fill',
+    Transporte: 'bi-car-front-fill',
+    Otros: 'bi-three-dots',
   };
 
   const handleSubmit = async (event) => {
@@ -35,8 +35,10 @@ function AddExpense({ handleAddExpense }) {
   return (
     <form onSubmit={handleSubmit}>
       <div className="row">
-        <div className="col-sm">
-          <label htmlFor="name">Nombre</label>
+        <div className="col-sm ">
+          <label className="fw-bold" htmlFor="name">
+            Nombre
+          </label>
           <input
             required="required"
             type="text"
@@ -48,7 +50,9 @@ function AddExpense({ handleAddExpense }) {
           ></input>
         </div>
         <div className="col-sm">
-          <label htmlFor="amount">Cantidad</label>
+          <label className="fw-bold" htmlFor="amount">
+            Cantidad
+          </label>
           <input
             required="required"
             type="number"
@@ -57,11 +61,11 @@ function AddExpense({ handleAddExpense }) {
             name="amount"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
-            min = "0"
+            min="0"
             step="0.01"
           ></input>
         </div>
-        <div className="col-l my-3">
+        <div className="col-l my-3 ">
           <select
             className="form-select"
             aria-label="Default select example"
@@ -80,7 +84,9 @@ function AddExpense({ handleAddExpense }) {
           </select>
         </div>
         <div className="col-l mb-2">
-          <label htmlFor="amount">Fecha</label>
+          <label className="fw-bold m-3" htmlFor="amount">
+            Fecha
+          </label>
           <input
             required="required"
             type="date"
@@ -92,7 +98,11 @@ function AddExpense({ handleAddExpense }) {
         </div>
         <div className="row">
           <div className="col-1 my-4">
-            <button type="submit" className="btn" style={{ backgroundColor: '#562f5eff', color: 'white' }}>
+            <button
+              type="submit"
+              className="btn"
+              style={{ backgroundColor: '#562f5eff', color: 'white' }}
+            >
               Guardar
             </button>
           </div>

@@ -35,7 +35,7 @@ function Login() {
         }}
       >
         <div className="col-md-8 p-4justify-content-center">
-          <h2 className="text-center fs-2">
+          <h2 className="text-center fs-1 m-4">
             Plan, <span className="custom-zave">Zave</span>, and Achieve Your
             Goals
           </h2>
